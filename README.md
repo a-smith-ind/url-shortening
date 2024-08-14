@@ -15,7 +15,12 @@ git clone git@github.com:a-smith-ind/url-shortening.git && cd url-shortening
 
 Install PHP dependencies:
 
+```console
+cp .env.example .env 
+```
+
 This command downloads all the required PHP libraries specified in the project's composer.json file.
+
 
 ```console
 docker run --rm --interactive --tty --volume $PWD:/app composer/composer install
@@ -24,6 +29,8 @@ docker run --rm --interactive --tty --volume $PWD:/app composer/composer install
 Build project, run it and login into container
 ```console
 ./vendor/bin/sail build --no-cache 
+```
+```console
 ./vendor/bin/sail up -d && docker exec -it app bash
 ```
 
@@ -31,3 +38,6 @@ Build project, run it and login into container
 ```console
 ./vendor/bin/phpunit tests
 ```
+
+### Author
+Luke S
